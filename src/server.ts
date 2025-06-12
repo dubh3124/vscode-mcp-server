@@ -190,7 +190,7 @@ export class MCPServer {
             
             return new Promise((resolve) => {
                 // Bind to localhost only for security
-                this.httpServer = this.app.listen(this.port, '127.0.0.1', () => {
+                this.httpServer = this.app.listen(this.port, '0.0.0.0', () => {
                     const httpStartTime = Date.now() - httpServerStartTime;
                     logger.info(`[MCPServer.start] HTTP Server started (took ${httpStartTime}ms)`);
                     logger.info(`MCP Server listening on localhost:${this.port}`);
